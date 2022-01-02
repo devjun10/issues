@@ -1,0 +1,56 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 1000
+    open-in-view: false
+    show-sql: true
+
+#  config:
+#    activate:
+#      on-profile: local
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/querydsl
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: jun
+    password: tjgusskavys8*
+decorator:
+  datasource:
+    p6spy:
+      enable-logging: true
+#  batch:
+#    jdbc:
+#      initialize-schema: ALWAYS
+#  main:
+#    allow-bean-definition-overriding: true
+server:
+  port: 8081
+
+
+#logging:
+#  level:
+#    apache:
+#      coyote:
+#        http11: debug
+#---
+#spring:
+#  profiles:
+#    active: local
+#  batch:
+#    job:
+#      names: ${job.name:NONE}
+#---
+#
+#spring:
+#  config:
+#    activate:
+#      on-profile: test
+#  jpa:
+#    database: h2
+#logging:
+#  level:
+#    org.hibernate.SQL: debug
