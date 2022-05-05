@@ -24,9 +24,9 @@ public class QMember extends EntityPathBase<Member> {
 
     public final NumberPath<Integer> age = createNumber("age", Integer.class);
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
+    public final NumberPath<Long> memberId = createNumber("memberId", Long.class);
 
-    public final StringPath name = createString("name");
+    public final StringPath memberName = createString("memberName");
 
     public final com.example.querydsl.domain.team.QTeam team;
 

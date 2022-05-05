@@ -16,16 +16,16 @@ public class Team {
     @Id
     @Column(name = "team_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long teamId;
 
     @Column(name = "name")
-    private String name;
+    private String teamName;
 
     @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
 
-    public Team(String name) {
-        this.name = name;
+    public Team(String teamName) {
+        this.teamName = teamName;
     }
 
     public List<Member> getMembers() {
@@ -35,8 +35,8 @@ public class Team {
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-                .append("id", id)
-                .append("name", name)
+                .append("id", teamId)
+                .append("name", teamName)
                 .toString();
     }
 }

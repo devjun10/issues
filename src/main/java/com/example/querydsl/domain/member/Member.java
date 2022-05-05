@@ -14,10 +14,10 @@ public class Member {
     @Id
     @Column(name = "member_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long memberId;
 
     @Column(name = "name")
-    private String name;
+    private String memberName;
 
     @Column(name = "age")
     private int age;
@@ -26,20 +26,24 @@ public class Member {
     @JoinColumn(name = "team_id")
     private Team team;
 
-    public Member(String name) {
-        this(name, 0);
+    public Member(String memberName) {
+        this(memberName, 0);
     }
 
-    public Member(String name, int age) {
-        this(name, age, null);
+    public Member(String memberName, int age) {
+        this(memberName, age, null);
     }
 
-    public Member(String name, int age, Team team) {
-        this.name = name;
+    public Member(String memberName, int age, Team team) {
+        this.memberName = memberName;
         this.age = age;
         if (team != null) {
             changeTeam(team);
         }
+    }
+
+    public Team getTeam() {
+        return team;
     }
 
     private void changeTeam(Team team) {
@@ -47,8 +51,12 @@ public class Member {
         team.getMembers().add(this);
     }
 
-    public String getName() {
-        return name;
+    public Long getMemberId() {
+        return memberId;
+    }
+
+    public String getMemberName() {
+        return memberName;
     }
 
     public int getAge() {
@@ -58,8 +66,8 @@ public class Member {
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-                .append("id", id)
-                .append("name", name)
+                .append("id", memberId)
+                .append("name", memberName)
                 .append("age", age)
                 .append("team", team)
                 .toString();

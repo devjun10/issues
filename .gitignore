@@ -1,1 +1,7 @@
-src/main/resources/application.yml
+src/main/resources/application-test.yml
+build.gradle
+gradlew
+gradlew.bat
+.gitignore
+.idea
+settings.gradle

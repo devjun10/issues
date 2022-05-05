@@ -20,11 +20,11 @@ public class QTeam extends EntityPathBase<Team> {
 
     public static final QTeam team = new QTeam("team");
 
-    public final NumberPath<Long> id = createNumber("id", Long.class);
-
     public final ListPath<com.example.querydsl.domain.member.Member, com.example.querydsl.domain.member.QMember> members = this.<com.example.querydsl.domain.member.Member, com.example.querydsl.domain.member.QMember>createList("members", com.example.querydsl.domain.member.Member.class, com.example.querydsl.domain.member.QMember.class, PathInits.DIRECT2);
 
-    public final StringPath name = createString("name");
+    public final NumberPath<Long> teamId = createNumber("teamId", Long.class);
+
+    public final StringPath teamName = createString("teamName");
 
     public QTeam(String variable) {
         super(Team.class, forVariable(variable));
