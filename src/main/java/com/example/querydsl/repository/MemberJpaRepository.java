@@ -1,7 +1,8 @@
 package com.example.querydsl.repository;
 
+import com.example.querydsl.controller.dto.MemberSearchCondition;
+import com.example.querydsl.controller.dto.MemberTeamDto;
 import com.example.querydsl.domain.member.Member;
-import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
@@ -110,4 +111,16 @@ public class MemberJpaRepository {
     private BooleanExpression ageLoe(Integer ageLoe) {
         return ageLoe != null ? member.age.loe(ageLoe) : null;
     }
+
+    /**
+     * 하부에 숨기기 위해서다.
+     * */
+    /**
+     * Sort를 여기서 사용할 수는 있지만 사용하기는 어렵다.
+     * 이는 조인하고 하면 안된다.
+     * 정렬은 조건이 조금만 복잡해져도 Pageable의 Sort를 사용하기가
+     * 힘들다. 루트 엔티티 범위를 넘어가는 동적 정렬 기능이 필요하면 스프링 데이터 페이징이 제공하는 것을 사용하기보다
+     * 파라미터를 받아서 직접 처리하는 것을 권장한다.
+     * */
+
 }

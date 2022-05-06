@@ -1,7 +1,0 @@
-src/main/resources/application-test.yml
-build.gradle
-gradlew
-gradlew.bat
-.gitignore
-.idea
-settings.gradle

@@ -1,4 +1,4 @@
-package com.example.querydsl.repository;
+package com.example.querydsl.controller.dto;
 
 import lombok.Data;
 

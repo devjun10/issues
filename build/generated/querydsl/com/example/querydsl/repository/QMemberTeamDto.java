@@ -1,6 +1,6 @@
 package com.example.querydsl.repository;
 
-import com.querydsl.core.types.dsl.*;
+import com.example.querydsl.controller.dto.MemberTeamDto;
 
 import com.querydsl.core.types.ConstructorExpression;
 import javax.annotation.processing.Generated;
